@@ -46,7 +46,7 @@ func (b *Books) GetAll() ([]domain.Book, error) {
 
 	for rows.Next() {
 		var book domain.Book
-		if err = rows.Scan(&book.ID, &book.Name, &book.ISBN, &book.Author, &book.Genre); err != nil {
+		if err = rows.Scan(&book.ID, &book.Name, &book.Author, &book.ISBN, &book.Genre); err != nil {
 			return nil, err
 		}
 		books = append(books, book)
